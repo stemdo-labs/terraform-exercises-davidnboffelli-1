@@ -1,0 +1,286 @@
+
+PS C:\Users\dnazareno\Workspace\gitrepo\terraform-exercises-davidnboffelli\soluciones\ejercicio4> terraform plan
+var.environment_tag
+  Describe el entorno de la VNet (dev, test, prod, etc).
+
+  Enter a value: dev
+
+var.owner_tag
+  Describe al propietario de la VNet
+
+  Enter a value: david
+
+var.vnet_name
+  Enter a value: vnetprodrigueztfexercise01
+
+
+Planning failed. Terraform encountered an error while generating this plan.
+
+╷
+│ Error: Invalid value for variable
+│
+│   on variables.tf line 5:
+│    5: variable "vnet_name"{
+│     ├────────────────
+│     │ var.vnet_name is "vnetprodrigueztfexercise01"
+│
+│ El valor de la variable vnet_name no puede ser vacío.
+│
+│ This was checked by the validation rule at variables.tf:12,3-13.
+╵
+PS C:\Users\dnazareno\Workspace\gitrepo\terraform-exercises-davidnboffelli\soluciones\ejercicio4> terraform plan
+var.environment_tag
+  Describe el entorno de la VNet (dev, test, prod, etc).
+
+  Enter a value: dev
+
+var.owner_tag
+  Describe al propietario de la VNet
+
+  Enter a value: David
+
+var.vnet_name
+  Enter a value: vnetprodrigueztfexercise01
+
+azurerm_virtual_network.example: Refreshing state... [id=/subscriptions/86f76907-b9d5-46fa-a39d-aff8432a1868/resourceGroups/rg1dnazareno-lab01/providers/Microsoft.Network/virtualNetworks/vnetdnazarenotfexercise01]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+-/+ destroy and then create replacement
+
+Terraform will perform the following actions:
+
+  # azurerm_virtual_network.example must be replaced
+-/+ resource "azurerm_virtual_network" "example" {
+      ~ dns_servers             = [] -> (known after apply)
+      - flow_timeout_in_minutes = 0 -> null
+      ~ guid                    = "a1732d03-e70b-4969-a250-81a0394b7337" -> (known after apply)
+      ~ id                      = "/subscriptions/86f76907-b9d5-46fa-a39d-aff8432a1868/resourceGroups/rg1dnazareno-lab01/providers/Microsoft.Network/virtualNetworks/vnetdnazarenotfexercise01" -> (known after apply)
+      ~ name                    = "vnetdnazarenotfexercise01" -> "vnetprodrigueztfexercise01" # forces replacement
+      ~ subnet                  = [] -> (known after apply)
+      - tags                    = {
+          - "environment" = "dea"
+          - "owner"       = ""
+        } -> null
+        # (3 unchanged attributes hidden)
+    }
+
+Plan: 1 to add, 0 to change, 1 to destroy.
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── 
+
+Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply" now.
+PS C:\Users\dnazareno\Workspace\gitrepo\terraform-exercises-davidnboffelli\soluciones\ejercicio4> terraform plan
+var.environment_tag
+  Describe el entorno de la VNet (dev, test, prod, etc).
+
+  Enter a value: dev
+
+var.owner_tag
+  Describe al propietario de la VNet
+
+  Enter a value: David
+
+var.vnet_name
+  Enter a value: vnetprodrigueztfexercise
+
+
+Planning failed. Terraform encountered an error while generating this plan.
+
+╷
+│ Error: Invalid value for variable
+│
+│   on variables.tf line 5:
+│    5: variable "vnet_name"{
+│     ├────────────────
+│     │ var.vnet_name is "vnetprodrigueztfexercise"
+│
+│ El valor de la variable vnet_name no puede ser vacío.
+│
+│ This was checked by the validation rule at variables.tf:12,3-13.
+╵
+PS C:\Users\dnazareno\Workspace\gitrepo\terraform-exercises-davidnboffelli\soluciones\ejercicio4> terraform plan
+var.environment_tag
+  Describe el entorno de la VNet (dev, test, prod, etc).
+
+  Enter a value: dev
+
+var.owner_tag
+  Describe al propietario de la VNet
+
+  Enter a value: David
+
+var.vnet_name
+  Enter a value: vnetprodrigueztfexercise1
+
+
+Planning failed. Terraform encountered an error while generating this plan.
+
+╷
+│ Error: Invalid value for variable
+│
+│   on variables.tf line 5:
+│    5: variable "vnet_name"{
+│     ├────────────────
+│     │ var.vnet_name is "vnetprodrigueztfexercise1"
+│
+│ El valor de la variable vnet_name no puede ser vacío.
+│
+│ This was checked by the validation rule at variables.tf:12,3-13.
+╵
+PS C:\Users\dnazareno\Workspace\gitrepo\terraform-exercises-davidnboffelli\soluciones\ejercicio4> terraform plan
+var.environment_tag
+  Describe el entorno de la VNet (dev, test, prod, etc).
+
+  Enter a value: dev
+
+var.owner_tag
+  Describe al propietario de la VNet
+
+  Enter a value: David
+
+var.vnet_name
+  Enter a value: vnetpr0drigu3ztfexercise01
+
+
+Planning failed. Terraform encountered an error while generating this plan.
+
+╷
+│ Error: Invalid value for variable
+│
+│   on variables.tf line 5:
+│    5: variable "vnet_name"{
+│     ├────────────────
+│     │ var.vnet_name is "vnetpr0drigu3ztfexercise01"
+│
+│ El valor de la variable vnet_name no puede ser vacío.
+│
+│ This was checked by the validation rule at variables.tf:12,3-13.
+╵
+PS C:\Users\dnazareno\Workspace\gitrepo\terraform-exercises-davidnboffelli\soluciones\ejercicio4> terraform plan
+var.environment_tag
+  Describe el entorno de la VNet (dev, test, prod, etc).
+
+  Enter a value: dev
+
+var.owner_tag
+  Describe al propietario de la VNet
+
+  Enter a value: David
+
+var.vnet_name
+  Enter a value: vnetprodrigueztfexercises01
+
+
+Planning failed. Terraform encountered an error while generating this plan.
+
+╷
+│ Error: Invalid value for variable
+│
+│   on variables.tf line 5:
+│    5: variable "vnet_name"{
+│     ├────────────────
+│     │ var.vnet_name is "vnetprodrigueztfexercises01"
+│
+│ El valor de la variable vnet_name no puede ser vacío.
+│
+│ This was checked by the validation rule at variables.tf:12,3-13.
+╵
+PS C:\Users\dnazareno\Workspace\gitrepo\terraform-exercises-davidnboffelli\soluciones\ejercicio4> terraform plan
+var.environment_tag
+  Describe el entorno de la VNet (dev, test, prod, etc).
+
+  Enter a value: dev
+
+var.owner_tag
+  Describe al propietario de la VNet
+
+  Enter a value: David
+
+var.vnet_name
+  Enter a value: vetprodrigueztfexercise01
+
+
+Planning failed. Terraform encountered an error while generating this plan.
+
+╷
+│ Error: Invalid value for variable
+│
+│   on variables.tf line 5:
+│    5: variable "vnet_name"{
+│     ├────────────────
+│     │ var.vnet_name is "vetprodrigueztfexercise01"
+│
+│ El valor de la variable vnet_name no puede ser vacío.
+│
+│ This was checked by the validation rule at variables.tf:12,3-13.
+╵
+PS C:\Users\dnazareno\Workspace\gitrepo\terraform-exercises-davidnboffelli\soluciones\ejercicio4> terraform plan
+var.environment_tag
+  Describe el entorno de la VNet (dev, test, prod, etc).
+
+  Enter a value: dev
+
+var.owner_tag
+  Describe al propietario de la VNet
+
+  Enter a value: David
+
+var.vnet_name
+  Enter a value: vnetProdrigueztfexercise01
+
+
+Planning failed. Terraform encountered an error while generating this plan.
+
+╷
+│ Error: Invalid value for variable
+│
+│   on variables.tf line 5:
+│    5: variable "vnet_name"{
+│     ├────────────────
+│     │ var.vnet_name is "vnetProdrigueztfexercise01"
+│
+│ El valor de la variable vnet_name no puede ser vacío.
+│
+│ This was checked by the validation rule at variables.tf:12,3-13.
+╵
+PS C:\Users\dnazareno\Workspace\gitrepo\terraform-exercises-davidnboffelli\soluciones\ejercicio4> terraform plan
+var.environment_tag
+  Describe el entorno de la VNet (dev, test, prod, etc).
+
+  Enter a value: dev
+
+var.owner_tag
+  Describe al propietario de la VNet
+
+  Enter a value: David
+
+var.vnet_name
+  Enter a value: vnetprodrigueztfexercise01
+
+azurerm_virtual_network.example: Refreshing state... [id=/subscriptions/86f76907-b9d5-46fa-a39d-aff8432a1868/resourceGroups/rg1dnazareno-lab01/providers/Microsoft.Network/virtualNetworks/vnetdnazarenotfexercise01]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+-/+ destroy and then create replacement
+
+Terraform will perform the following actions:
+
+  # azurerm_virtual_network.example must be replaced
+-/+ resource "azurerm_virtual_network" "example" {
+      ~ dns_servers             = [] -> (known after apply)
+      - flow_timeout_in_minutes = 0 -> null
+      ~ guid                    = "a1732d03-e70b-4969-a250-81a0394b7337" -> (known after apply)
+works/vnetdnazarenotfexercise01" -> (known after apply)
+      ~ name                    = "vnetdnazarenotfexercise01" -> "vnetprodrigueztfexercise01" # forces replacement
+      ~ subnet                  = [] -> (known after apply)
+      - tags                    = {
+          - "environment" = "dea"
+          - "owner"       = ""
+        } -> null
+        # (3 unchanged attributes hidden)
+    }
+
+Plan: 1 to add, 0 to change, 1 to destroy.
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply" now.
