@@ -34,6 +34,11 @@ jobs:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v4
+      with:
+        sparse-checkout: |
+          .github
+          src
+          soluciones/ejercicio8
 
     # Install the latest version of the Terraform CLI
     - name: Setup Terraform
