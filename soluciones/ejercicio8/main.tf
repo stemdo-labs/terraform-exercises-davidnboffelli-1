@@ -5,16 +5,16 @@ terraform {
       version = "3.102.0"
     }
   }
+  backend "azurerm" {
+      resource_group_name  = "rg1dnazareno-lab01"
+      storage_account_name = "tfstatei10i7"
+      container_name       = "tfstate"
+      key                  = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
   features {}
-}
-
-module "gruposeguridad" {
-  source = "github.com/stemdo-labs/terraform-exercises-davidnboffelli-1/soluciones/ejercicio7/modules/gruposeguridad"
-  #source = "./modules/gruposeguridad"
-  existent_resource_group_name = var.existent_resource_group_name
 }
 
 module "vnetejerciciosanteriores" {
@@ -27,18 +27,27 @@ module "vnetejerciciosanteriores" {
   existent_resource_group_name = var.existent_resource_group_name
 }
 
-module "subredes" {
-  #Solo por diversidad, decido que busque este módulo en local
-  source = "./modules/crearsubnets"
-  for_each = var.subnets
-  name                 = each.value.key
-  resource_group_name  = var.existent_resource_group_name
-  virtual_network_name = module.vnetejerciciosanteriores.name
-  address_prefixes     = each.value.address_prefixes
+resource "random_string" "resource_code" {
+  length  = 5
+  special = false
+  upper   = false
 }
 
-resource "azurerm_subnet_network_security_group_association" "asoc_grupo_subred" {
-  for_each = module.subredes
-  subnet_id                 = each.value.id
-  network_security_group_id = module.gruposeguridad.id
+resource "azurerm_storage_account" "tfstate" {
+  name                     = "tfstate${random_string.resource_code.result}"
+  resource_group_name      = var.existent_resource_group_name
+  location                 = var.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+  allow_nested_items_to_be_public = false
+
+  tags = {
+    environment = "staging"
+  }
+}
+
+resource "azurerm_storage_container" "tfstate" {
+  name                  = "tfstate"
+  storage_account_name  = azurerm_storage_account.tfstate.name
+  container_access_type = "private"
 }
