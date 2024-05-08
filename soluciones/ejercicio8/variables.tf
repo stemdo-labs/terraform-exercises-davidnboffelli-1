@@ -31,7 +31,7 @@ variable "location"{
 variable "sn_name"{
   type = string
   validation {
-    condition = length(var.sn.name) > 4
+    condition = length(var.sn_name) > 4
     error_message = "El nombre debe tener más de 4 caracteres."
   }
 }
