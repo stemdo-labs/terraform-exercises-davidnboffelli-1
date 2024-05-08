@@ -1,3 +1,4 @@
+Configuré el almacenamiento de estado remoto para el módulo "ejerciciosanteriores" que es el módulo hecho en el ejercicio5 (vnet)
 Subo una captura del archivo terraform.tfsate de la nube
 En el terraform destroy ha aparecido un error al final referido a la actualizacion del estado
 supongo que es normal, al querer modificar el nuevo estado no encuentra el recurso porque fue eliminado
