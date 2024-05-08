@@ -27,3 +27,10 @@ variable "location"{
 variable "sn_name"{
   type = string
 }
+
+variable "subnets" {
+  type = map(object({
+    key              = string
+    address_prefixes = set(string)
+  }))
+}

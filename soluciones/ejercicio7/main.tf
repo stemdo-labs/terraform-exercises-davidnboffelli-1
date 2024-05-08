@@ -30,18 +30,15 @@ module "vnetejerciciosanteriores" {
 module "subredes" {
   #Solo por diversidad, decido que busque este módulo en local
   source = "./modules/crearsubnets"
-  count = 3
-  name                 = "${var.sn_name}${count.index}"
+  for_each = var.subnets
+  name                 = each.value.key
   resource_group_name  = var.existent_resource_group_name
   virtual_network_name = module.vnetejerciciosanteriores.name
-  address_prefixes     = ["10.0.${count.index + 1}.0/24"]
+  address_prefixes     = each.value.address_prefixes
 }
 
 resource "azurerm_subnet_network_security_group_association" "asoc_grupo_subred" {
-  for_each   = {
-    for index, sr in module.subredes:
-    sr.id => sr
-  }
-  subnet_id                 = each.value["id"]
+  for_each = module.subredes
+  subnet_id                 = each.value.id
   network_security_group_id = module.gruposeguridad.id
 }
