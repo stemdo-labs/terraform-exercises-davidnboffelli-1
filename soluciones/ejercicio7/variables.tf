@@ -17,6 +17,10 @@ variable "vnet_name"{
 
 variable "vnet_address_space"{
   type = list(string)
+  validation {
+    condition = length(var.vnet_address_space) > 0
+    error_message = "Debe indicar al menos un espacio de direccón."
+  }
 }
 
 variable "location"{
@@ -26,6 +30,10 @@ variable "location"{
 
 variable "sn_name"{
   type = string
+  validation {
+    condition = length(var.sn.name) > 4
+    error_message = "El nombre debe tener más de 4 caracteres."
+  }
 }
 
 variable "subnets" {
@@ -33,4 +41,14 @@ variable "subnets" {
     key              = string
     address_prefixes = set(string)
   }))
+  default = {
+    subnet1 = {
+      "key"              = "subnet_1"
+      "address_prefixes" = ["10.0.1.0/24"]
+    }
+    subnet2 = {
+      "key"              = "subnet_2"
+      "address_prefixes" = ["10.0.2.0/24"]
+    }
+  }
 }
