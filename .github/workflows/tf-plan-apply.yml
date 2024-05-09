@@ -53,7 +53,7 @@ jobs:
       with:
           tf_actions_version: 1.1.7
           tf_actions_subcommand: 'init'
-          tf_actions_working_dir: './soluciones/ejercicio8/'
+          tf_actions_working_dir: 'soluciones/ejercicio8'
 
     # Checks that all Terraform configuration files adhere to a canonical format
     # Will fail the build if not
