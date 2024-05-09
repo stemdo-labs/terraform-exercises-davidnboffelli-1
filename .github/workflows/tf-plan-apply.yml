@@ -34,11 +34,11 @@ jobs:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v4
-      with:
-        sparse-checkout: |
-          .github
-          src
-          soluciones/ejercicio8
+#      with:
+#        sparse-checkout: |
+#          .github
+#          src
+#          soluciones/ejercicio8
 
     # Install the latest version of the Terraform CLI
     - name: Setup Terraform
@@ -48,7 +48,11 @@ jobs:
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
-      run: terraform init
+      #run: terraform init
+      uses: hashicorp/terraform-github-actions@master
+      with:
+          tf_actions_subcommand: 'init'
+          tf_actions_working_dir: './soluciones/ejercicio8/'
 
     # Checks that all Terraform configuration files adhere to a canonical format
     # Will fail the build if not
