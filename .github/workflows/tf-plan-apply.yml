@@ -48,7 +48,7 @@ jobs:
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
-      run: terraform -chdir=soluciones/ejercicio8 init
+      run: terraform -chdir=soluciones/ejercicio5 init
       #uses: hashicorp/terraform-github-actions@master
       #with:
       #    tf_actions_version: 1.1.7
