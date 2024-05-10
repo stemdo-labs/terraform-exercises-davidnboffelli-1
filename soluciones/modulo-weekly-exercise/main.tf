@@ -79,6 +79,7 @@ resource "azurerm_linux_virtual_machine" "azlvm" {
   #  username   = each.value.admin_username
   #  public_key = file(var.vm_ssh_public_key)
   #}
+  disable_password_authentication = false
   admin_password = var.secret_password
 }
 
