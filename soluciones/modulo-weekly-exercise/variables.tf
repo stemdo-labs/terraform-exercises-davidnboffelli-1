@@ -1,11 +1,9 @@
 variable "location"{
   type = string
-  default = "West Europe"
 }
 
 variable "existent_resource_group_name"{
   type = string
-  default = "rg1dnazareno-lab01"
 }
 
 variable "maquinasvirtuales" {
@@ -26,7 +24,6 @@ variable "maquinasvirtuales" {
         size                = "Standard_F2"
         admin_username      = "adminuser"
         interface_name      = "aznic"
-        interface_number    = 0
     }
   }
 }

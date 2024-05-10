@@ -75,10 +75,6 @@ resource "azurerm_linux_virtual_machine" "azlvm" {
     caching              = var.vm_disk_caching
     storage_account_type = var.vm_disk_storage_account_type
   }
-  #admin_ssh_key {
-  #  username   = each.value.admin_username
-  #  public_key = file(var.vm_ssh_public_key)
-  #}
   disable_password_authentication = false
   admin_password = var.secret_password
 }
