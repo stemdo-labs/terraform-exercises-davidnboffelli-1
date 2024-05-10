@@ -75,10 +75,11 @@ resource "azurerm_linux_virtual_machine" "azlvm" {
     caching              = var.vm_disk_caching
     storage_account_type = var.vm_disk_storage_account_type
   }
-  admin_ssh_key {
-    username   = each.value.admin_username
-    public_key = file(var.vm_ssh_public_key)
-  }
+  #admin_ssh_key {
+  #  username   = each.value.admin_username
+  #  public_key = file(var.vm_ssh_public_key)
+  #}
+  admin_password = var.secret_password
 }
 
 resource "azurerm_lb" "azlb" {
