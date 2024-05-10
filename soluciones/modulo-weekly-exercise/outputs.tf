@@ -15,15 +15,16 @@ output "assoc_secgroup_subnet_id" {
 }
 
 output "net_interface_id" {
-  value = azurerm_network_interface.aznic.id
+  
+  value = [for bd in azurerm_network_interface.aznic : bd.id]
 }
 
 output "assoc_lb_bap_net_interface_id" {
-  value = azurerm_network_interface_backend_address_pool_association.my_nic_lb_pool.id
+  value = [for bd in azurerm_network_interface_backend_address_pool_association.my_nic_lb_pool : bd.id]
 }
 
 output "lv_machine_id" {
-  value = azurerm_linux_virtual_machine.azlvm.id
+  value = [for bd in azurerm_linux_virtual_machine.azlvm : bd.id]
 }
 
 output "lb_id" {
