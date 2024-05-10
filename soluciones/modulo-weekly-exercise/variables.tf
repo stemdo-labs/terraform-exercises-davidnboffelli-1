@@ -170,3 +170,8 @@ variable "lb_backend_address_pool_name" {
   type = string
   default = "test-pool"
 }
+
+variable "secret_password" {
+  type = string
+  default = "123456"
+}
