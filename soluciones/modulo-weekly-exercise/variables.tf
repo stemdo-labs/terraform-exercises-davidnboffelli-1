@@ -169,5 +169,5 @@ variable "lb_backend_address_pool_name" {
 
 variable "secret_password" {
   type = string
-  default = "123456"
+  default = "123@Abc"
 }
